@@ -96,7 +96,7 @@ enable_log="false"
 output_logfile="/var/log/kernel_compile_$(date +%Y-%m-%d_%H-%M-%S).log"
 
 # Set the kernel configuration download repository, branch and path
-kernel_config_repo="https://github.com/ophub/kernel"
+kernel_config_repo="https://github.com/ezlp/kernel"
 kernel_config_repo_branch="main"
 kernel_config_path="kernel-config/release"
 # Set the kernel config tag directory, options: [ stable / rk3588 / rk35xx / h6 ]
@@ -104,7 +104,7 @@ config_flavor="stable"
 config_download="false"
 
 # Compile toolchain download mirror, run on Armbian
-dev_repo="https://github.com/ophub/kernel/releases/download/dev"
+dev_repo="https://github.com/ezlp/kernel/releases/download/dev"
 # Arm GNU Toolchain source: https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
 gun_file="arm-gnu-toolchain-15.3.rel1-aarch64-aarch64-none-linux-gnu.tar.xz"
 # Set the toolchain path

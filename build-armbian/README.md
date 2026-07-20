@@ -10,7 +10,7 @@ Required firmware files are automatically downloaded from the [ophub/firmware](h
 
 ## kernel
 
-Create a version-specific folder under the `kernel` directory, e.g., `stable/5.10.125`. For multiple kernels, create separate directories sequentially and place the corresponding kernel files in each. Kernel files can be downloaded from the [kernel](https://github.com/ophub/kernel) repository, or you can [compile them yourself](../compile-kernel). If no kernel files are present locally, the build script will automatically download them from the kernel repository.
+Create a version-specific folder under the `kernel` directory, e.g., `stable/5.10.125`. For multiple kernels, create separate directories sequentially and place the corresponding kernel files in each. Kernel files can be downloaded from the [kernel](https://github.com/ezlp/kernel) repository, or you can [compile them yourself](../compile-kernel). If no kernel files are present locally, the build script will automatically download them from the kernel repository.
 
 ## u-boot
 

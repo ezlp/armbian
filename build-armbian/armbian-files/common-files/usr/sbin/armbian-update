@@ -267,7 +267,7 @@ init_var() {
     done
 
     # Adjust the custom kernel repository url format
-    [[ -z "${KERNEL_REPO}" ]] && KERNEL_REPO="ophub/kernel"
+    [[ -z "${KERNEL_REPO}" ]] && KERNEL_REPO="ezlp/kernel"
     [[ "${KERNEL_REPO}" =~ ^https: ]] && KERNEL_REPO="$(echo ${KERNEL_REPO} | awk -F'/' '{print $4"/"$5}')"
     kernel_api="https://github.com/${KERNEL_REPO}"
 

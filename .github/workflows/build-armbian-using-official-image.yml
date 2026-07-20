@@ -269,12 +269,12 @@ on:
         default: true
         type: boolean
       kernel_repo:
-        description: "Set the kernel repository."
+        description: "Set kernel repository."
         required: false
-        default: "ophub/kernel"
+        default: "ezlp/kernel"
         type: choice
         options:
-          - ophub/kernel
+          - ezlp/kernel
       kernel_usage:
         description: "Set the tags of the stable kernel."
         required: false

@@ -17,9 +17,9 @@ This project relies on many [contributors](CONTRIBUTORS.md) to build the Armbian
 
 ## Supported Device
 
-| SoC | [Device](https://github.com/ophub/amlogic-s9xxx-armbian/releases) | [Kernel](https://github.com/ophub/kernel) |
+| SoC | [Device](https://github.com/ophub/amlogic-s9xxx-armbian/releases) | [Kernel](https://github.com/ezlp/kernel) |
 | ---- | ---- | ---- |
-| s905x | [HG680P](https://github.com/ophub/amlogic-s9xxx-armbian/issues/262) | [stable](https://github.com/ophub/kernel/releases/tag/kernel_stable) |
+| s905x | [HG680P](https://github.com/ophub/amlogic-s9xxx-armbian/issues/262) | [stable](https://github.com/ezlp/kernel/releases/tag/kernel_stable) |
 
 
 > [!TIP]
@@ -55,9 +55,9 @@ armbian-update
 
 | Optional | Default      | Options       | Description                      |
 | -------- | ------------ | ------------- | -------------------------------- |
-| -r       | ophub/kernel | `<owner>/<repo>` | Set the repository for downloading kernels from github.com |
-| -u       | Automation   | stable/flippy/beta | Set the kernel [tags suffix](https://github.com/ophub/kernel/releases) |
-| -k       | Latest version | Kernel version | Set the [kernel version](https://github.com/ophub/kernel/releases/tag/kernel_stable) |
+| -r       | ezlp/kernel | `<owner>/<repo>` | Set the repository for downloading kernels from github.com |
+| -u       | Automation   | stable/flippy/beta | Set the kernel [tags suffix](https://github.com/ezlp/kernel/releases) |
+| -k       | Latest version | Kernel version | Set the [kernel version](https://github.com/ezlp/kernel/releases/tag/kernel_stable) |
 | -b       | yes          | yes/no        | Automatically back up the currently used kernel when updating |
 | -d       | deb          | tar/deb       | Set the preferred kernel package format. If unavailable, the script will automatically try the alternative format. The `deb` format is recommended for compiling custom drivers. |
 | -m       | no           | yes/no        | Use mainline u-boot |
@@ -131,7 +131,7 @@ armbian-ddbr
 Enter `b` at the prompt to back up the system, or `r` to restore.
 
 > [!IMPORTANT]
-> Alternatively, the Android system can be flashed directly into eMMC via USB cable. Android system images are available in [Tools](https://github.com/ophub/kernel/releases/tag/tools).
+> Alternatively, the Android system can be flashed directly into eMMC via USB cable. Android system images are available in [Tools](https://github.com/ezlp/kernel/releases/tag/tools).
 
 - ### Compile the Kernel in Armbian
 
@@ -176,9 +176,9 @@ sudo apt-get install -y $(cat compile-kernel/tools/script/ubuntu2404-build-armbi
 | Parameter | Meaning     | Description |
 | ----      | ----------  | ----------  |
 | -b        | Board      | Specifies the target device codename (`s905x` for HG680P). For supported board configuration, refer to [model_database.conf](build-armbian/armbian-files/common-files/etc/model_database.conf). Default: `s905x` |
-| -r        | KernelRepo | Specify the `<owner>/<repo>` of the github.com kernel repository. Default value: `ophub/kernel` |
-| -u        | kernelUsage | Set the `tags suffix` of the kernel used, such as [stable](https://github.com/ophub/kernel/releases/tag/kernel_stable), [flippy](https://github.com/ophub/kernel/releases/tag/kernel_flippy), [beta](https://github.com/ophub/kernel/releases/tag/kernel_beta). Default value: `stable` |
-| -k        | Kernel     | Specify [kernel](https://github.com/ophub/kernel/releases/tag/kernel_stable) name, such as `-k 6.6.12`. Connect multiple kernels with `_`, such as `-k 6.6.12_5.15.50`. |
+| -r        | KernelRepo | Specify the `<owner>/<repo>` of the github.com kernel repository. Default value: `ezlp/kernel` |
+| -u        | kernelUsage | Set the `tags suffix` of the kernel used, such as [stable](https://github.com/ezlp/kernel/releases/tag/kernel_stable), [flippy](https://github.com/ezlp/kernel/releases/tag/kernel_flippy), [beta](https://github.com/ezlp/kernel/releases/tag/kernel_beta). Default value: `stable` |
+| -k        | Kernel     | Specify [kernel](https://github.com/ezlp/kernel/releases/tag/kernel_stable) name, such as `-k 6.6.12`. Connect multiple kernels with `_`, such as `-k 6.6.12_5.15.50`. |
 | -a        | AutoKernel | Set whether to automatically use the latest kernel within the same series. When `true`, the kernel repository is checked for newer versions within the series specified by `-k` (e.g., 6.6.12), and if found, the latest version is used automatically. When `false`, the exact specified version is used. Default: `true` |
 | -t        | RootfsType | Set the file system type of the ROOTFS partition. Options: `ext4` or `btrfs`. Example: `-t btrfs`. Default: `ext4` |
 | -s        | Size       | Set the image partition sizes. To set only the ROOTFS partition, specify a single value (e.g., `-s 2560`). To set both BOOTFS and ROOTFS, join them with `/` (e.g., `-s 512/2560`). Default: `512/2560` |
@@ -214,9 +214,9 @@ sudo apt-get install -y $(cat compile-kernel/tools/script/ubuntu2404-build-armbi
 |-----------------|---------------|---------------------------------------------------------|
 | armbian_path    | None          | Set the path of the original Armbian file. Supports workflow file paths (e.g., `build/output/images/*.img`) and network download URLs. |
 | armbian_board   | s905x         | Set the `board` of the package box (`s905x`), refer to `-b` |
-| kernel_repo     | ophub/kernel  | Specify `<owner>/<repo>` of the github.com kernel repository, refer to `-r` |
+| kernel_repo     | ezlp/kernel  | Specify `<owner>/<repo>` of the github.com kernel repository, refer to `-r` |
 | kernel_usage    | stable        | Set the `tags suffix` of the used kernel. Refer to `-u` |
-| armbian_kernel  | 6.12.y_6.18.y | Set the [version](https://github.com/ophub/kernel/releases/tag/kernel_stable) of the kernel, refer to `-k` |
+| armbian_kernel  | 6.12.y_6.18.y | Set the [version](https://github.com/ezlp/kernel/releases/tag/kernel_stable) of the kernel, refer to `-k` |
 | auto_kernel     | true          | Set whether to automatically adopt the latest version of the same series kernel, refer to `-a`       |
 | armbian_fstype  | ext4          | Set the file system type of the system's ROOTFS partition, refer to `-t`  |
 | armbian_size    | 512/2560      | Set the size of the system BOOTFS and ROOTFS partitions, function reference `-s`  |
@@ -255,7 +255,7 @@ For kernel compilation instructions, see [compile-kernel](compile-kernel).
 
 First and foremost, thanks to [150balbes](https://github.com/150balbes) for the outstanding contributions and the solid foundation laid for running Armbian on Amlogic TV boxes. The [Armbian](https://github.com/armbian/build) system compiled here uses the latest official source code for real-time builds. Thanks to everyone's dedication and sharing.
 
-The [u-boot](https://github.com/ophub/u-boot), [kernel](https://github.com/ophub/kernel), and other resources used in this system are primarily sourced from the [unifreq/openwrt_packit](https://github.com/unifreq/openwrt_packit) project. Some files have been contributed by users through [Pull Requests](https://github.com/ophub/amlogic-s9xxx-armbian/pulls) and [Issues](https://github.com/ophub/amlogic-s9xxx-armbian/issues). All contributions since the repository's creation (`2021-09-19`) are recorded in [CONTRIBUTORS.md](https://github.com/ophub/amlogic-s9xxx-armbian/blob/main/CONTRIBUTORS.md). Thanks again to everyone for breathing new life and purpose into these devices.
+The [u-boot](https://github.com/ophub/u-boot), [kernel](https://github.com/ezlp/kernel), and other resources used in this system are primarily sourced from the [unifreq/openwrt_packit](https://github.com/unifreq/openwrt_packit) project. Some files have been contributed by users through [Pull Requests](https://github.com/ophub/amlogic-s9xxx-armbian/pulls) and [Issues](https://github.com/ophub/amlogic-s9xxx-armbian/issues). All contributions since the repository's creation (`2021-09-19`) are recorded in [CONTRIBUTORS.md](https://github.com/ophub/amlogic-s9xxx-armbian/blob/main/CONTRIBUTORS.md). Thanks again to everyone for breathing new life and purpose into these devices.
 
 ## Other Distributions
 
