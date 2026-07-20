@@ -150,6 +150,10 @@ For `Amlogic s905x HG680P`, the device tree and boot configuration details:
 | --- | ----- | -------- | --------------- |
 | s905x | HG680P | meson-gxl-s905x-p212.dtb | u-boot-p212.bin |
 
+> [!NOTE]
+> - **Local U-Boot File**: Pre-loaded in `build-armbian/u-boot/amlogic/overload/u-boot-p212.bin` for standalone building.
+> - **Kernel Repository**: Configured by default to use [ezlp/kernel](https://github.com/ezlp/kernel).
+
 ### 12.2 Instructions for LED Screen Display Control
 
 Refer to [led_screen_display_control.md](led_screen_display_control.md).

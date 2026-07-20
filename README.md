@@ -22,8 +22,15 @@ This project relies on many [contributors](CONTRIBUTORS.md) to build the Armbian
 | s905x | [HG680P](https://github.com/ophub/amlogic-s9xxx-armbian/issues/262) | [stable](https://github.com/ezlp/kernel/releases/tag/kernel_stable) |
 
 
+> [!NOTE]
+> **Repository Scope & Configuration**:
+> - **Target Device**: Exclusively supports **Amlogic S905X HG680P** (`meson-gxl-s905x-p212.dtb`).
+> - **Kernel Repository**: Defaults to [ezlp/kernel](https://github.com/ezlp/kernel).
+> - **Local U-Boot**: Pre-bundled with `u-boot-p212.bin` under `build-armbian/u-boot/amlogic/overload/` for self-contained builds without external downloads.
+> - **GitHub Workflows**: Streamlined workflows pre-configured for S905X HG680P with `ezlp` signature.
+
 > [!TIP]
-> For more information, refer to the [✅ Supported Device List](build-armbian/armbian-files/common-files/etc/model_database.conf). Please read the [Armbian User Documentation](./documents) before use.
+> For more information, refer to the [✅ Model Database](build-armbian/armbian-files/common-files/etc/model_database.conf). Please read the [Armbian User Documentation](./documents) before use.
 
 ## Installation and Upgrade Instructions for Armbian
 
