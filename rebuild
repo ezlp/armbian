@@ -472,21 +472,21 @@ download_depends() {
     echo -e "${STEPS} Downloading dependency files..."
 
     # Download Armbian u-boot files
-    uboot_num="$(find "${uboot_path}/rockchip" -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l)"
-    if [[ -n "${uboot_num}" && "${uboot_num}" -le "5" ]]; then
+    uboot_num="$(find "${uboot_path}/amlogic" -mindepth 1 2>/dev/null | wc -l)"
+    if [[ -n "${uboot_num}" && "${uboot_num}" -gt "0" ]]; then
+        echo -e "${INFO} Local u-boot files exist, skip downloading."
+    else
         git_pull_dir "${uboot_repo}" main u-boot "${uboot_path}"
         echo -e "${INFO} u-boot download completed."
-    else
-        echo -e "${INFO} u-boot files exist, skip downloading."
     fi
 
     # Download Armbian firmware files
     firmware_num="$(find "${firmware_path}" -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l)"
-    if [[ -n "${firmware_num}" && "${firmware_num}" -le "5" ]]; then
+    if [[ -n "${firmware_num}" && "${firmware_num}" -gt "0" ]]; then
+        echo -e "${INFO} Local firmware files exist, skip downloading."
+    else
         git_pull_dir "${firmware_repo}" main firmware "${firmware_path}"
         echo -e "${INFO} firmware download completed."
-    else
-        echo -e "${INFO} firmware files exist, skip downloading."
     fi
 }
 
