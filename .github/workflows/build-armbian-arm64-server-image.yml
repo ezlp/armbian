@@ -80,15 +80,14 @@ on:
       builder_name:
         description: "Set Armbian builder signature."
         required: false
-        default: "ophub"
+        default: "ezlp"
         type: choice
         options:
-          - ophub
-          - angel
+          - ezlp
       config_board:
         description: "Set the base Armbian board name."
         required: false
-        default: "odroidn2"
+        default: "s905x"
 
 env:
   TZ: Etc/UTC
